@@ -1,0 +1,55 @@
+import dependencies.Dep
+import dependencies.ModuleNames
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply from: rootProject.file('gradle/android.gradle')
+
+dependencies {
+
+    implementation project(ModuleNames.Common)
+    implementation project(ModuleNames.CoreComponent)
+    implementation project(ModuleNames.Resources)
+
+    implementation Dep.Timber.android
+
+
+    //arch
+    implementation Dep.AndroidX.lifecycleViewModel
+    implementation Dep.AndroidX.lifecycleRuntime
+    implementation Dep.AndroidX.lifecycleExtensions
+
+    implementation Dep.AndroidX.appCompat
+    implementation Dep.AndroidX.constraint
+    implementation Dep.AndroidX.design
+    implementation Dep.AndroidX.recyclerView
+    implementation Dep.AndroidX.coreKtx
+    implementation Dep.AndroidX.activity
+    implementation Dep.AndroidX.swipe
+
+    implementation Dep.Retrofit.core
+    implementation Dep.gson
+    implementation Dep.Glide.core
+
+    implementation Dep.Kotlin.stdlibJvm
+    implementation Dep.Kotlin.coroutines
+
+    implementation Dep.Dagger.hilt
+    kapt Dep.Dagger.compiler
+    kapt Dep.Dagger.viewmodelCompiler
+
+    testImplementation Dep.Test.junit
+    testImplementation Dep.Test.mockk
+    testImplementation Dep.Kotlin.coroutinesTest
+    testImplementation Dep.Test.archCore
+
+    androidTestImplementation Dep.Test.testRunner
+    androidTestImplementation Dep.Test.espressoCore
+}
+
+

@@ -1,0 +1,53 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import dependencies.Dep
+
+apply from: file('gradle/dependencyGraph.gradle')
+
+buildscript {
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath Dep.GradlePlugin.android
+        classpath Dep.GradlePlugin.kotlin
+        classpath Dep.Dagger.agp
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    tasks.matching { it instanceof Test }.all {
+        testLogging {
+            events = ["failed", "skipped"]
+            outputs.upToDateWhen { false }
+            showStandardStreams = true
+        }
+    }
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task dependencyReport {
+    doLast {
+        def file = new File("project-dependencies.dot")
+        file.delete()
+        file << "digraph {\n"
+        file << "splines=ortho\n"
+        rootProject.childProjects.each { item ->
+            def from = item.value
+            from.configurations.compile.dependencies
+                    .matching { it in ProjectDependency }
+                    .each { to -> file << ("\"${from.name}\" -> \"${to.name}\"\n") }
+        }
+        file << "}\n"
+    }
+}

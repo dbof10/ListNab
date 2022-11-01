@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.memoir.home">
+
+
+    <application>
+
+        <activity
+            android:name=".ui.HomeActivity"
+            android:theme="@style/AppTheme.Home" />
+
+    </application>
+
+
+</manifest>

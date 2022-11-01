@@ -1,0 +1,28 @@
+import dependencies.Dep
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: rootProject.file('gradle/android.gradle')
+
+
+dependencies {
+
+    implementation Dep.gson
+
+    implementation Dep.Kotlin.stdlibJvm
+    implementation Dep.AndroidX.appCompat
+    implementation Dep.AndroidX.recyclerView
+    implementation Dep.AndroidX.coreKtx
+
+    implementation Dep.Kotlin.coroutines
+
+    implementation Dep.Glide.core
+
+    implementation Dep.AndroidX.lifecycleRuntime
+
+    testImplementation Dep.Test.junit
+    androidTestImplementation Dep.Test.testRunner
+    androidTestImplementation Dep.Test.espressoCore
+}

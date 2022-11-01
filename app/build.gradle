@@ -1,0 +1,114 @@
+import dependencies.Dep
+import dependencies.ModuleNames
+import dependencies.Versions
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+
+    compileSdkVersion Versions.androidCompileSdkVersion
+    signingConfigs {
+
+    }
+    defaultConfig {
+        applicationId "com.sample"
+        minSdkVersion Versions.androidMinSdkVersion
+        targetSdkVersion Versions.androidTargetSdkVersion
+
+        versionCode Versions.androidVersionCode
+        versionName Versions.androidVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+
+        testOptions {
+            execution 'ANDROIDX_TEST_ORCHESTRATOR'
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+
+        }
+        release {
+
+        }
+    }
+
+    packagingOptions {
+        doNotStrip '*/arm64-v8a/*.so'
+        doNotStrip '*/armeabi-v7a/*.so'
+        exclude 'META-INF/*.kotlin_module'
+        exclude 'META-INF/*.version'
+        exclude 'META-INF/proguard/*.pro'
+    }
+
+    hilt {
+        enableAggregatingTask = true
+    }
+}
+
+kapt {
+    correctErrorTypes true
+}
+
+dependencies {
+
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation project(ModuleNames.CoreComponent)
+    implementation project(ModuleNames.Common)
+
+    implementation Dep.gson
+
+    implementation project(ModuleNames.Home)
+    implementation project(ModuleNames.Resources)
+
+    //Network
+    implementation Dep.Okhttp.client
+    implementation Dep.Okhttp.log
+    implementation Dep.Retrofit.core
+    implementation Dep.Retrofit.gson
+
+    implementation Dep.AndroidX.Navigation.runtime
+
+
+    implementation Dep.Kotlin.stdlibJvm
+    implementation Dep.Kotlin.coroutines
+
+
+    implementation Dep.Dagger.hilt
+    kapt Dep.Dagger.compiler
+    kapt Dep.Dagger.viewmodelCompiler
+
+    implementation Dep.Timber.android
+
+    //Storage
+    implementation Dep.AndroidX.Room.runtime
+    implementation Dep.AndroidX.Room.ktx
+
+
+    kapt Dep.AndroidX.Room.compiler
+
+    implementation Dep.AndroidX.sharedPref
+
+
+    debugImplementation Dep.LeakCanary.leakCanary
+    debugImplementation Dep.LeakCanary.leakCanaryPlumber
+
+    //Test
+    testImplementation Dep.Test.junit
+    testImplementation Dep.Test.kotlinTestAssertions
+
+    androidTestImplementation Dep.Test.testRunner
+    androidTestImplementation Dep.Test.espressoCore
+    androidTestImplementation Dep.Test.kakao
+    androidTestImplementation Dep.Test.extJunitKtx
+    androidTestUtil 'androidx.test:orchestrator:1.4.1'
+
+}

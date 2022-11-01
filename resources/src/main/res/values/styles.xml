@@ -1,0 +1,168 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/color_status_bar</item>
+        <item name="android:windowLightStatusBar">@bool/isLightStatusBar</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementsUseOverlay">false</item>
+    </style>
+
+    <style name="MaterialTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/color_status_bar</item>
+        <item name="android:windowLightStatusBar">@bool/isLightStatusBar</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementsUseOverlay">false</item>
+    </style>
+
+    <style name="AppTheme.NoStatusBar">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="AppTheme.Translucent">
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+
+    <style name="Text" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/memoir</item>
+        <item name="fontFamily">@font/memoir</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.Title">
+        <item name="android:textSize">@dimen/font_24</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Title1" parent="Text.Title">
+        <item name="android:textColor">@color/color_152846</item>
+    </style>
+
+    <style name="Text.Title2" parent="Text.Title">
+        <item name="android:textColor">@color/color_fff</item>
+    </style>
+
+    <style name="Text.Body">
+        <item name="android:textSize">@dimen/font_16</item>
+    </style>
+
+    <style name="Text.Body1" parent="Text.Body">
+        <item name="android:textColor">@color/color_152846</item>
+    </style>
+
+    <style name="Text.Body2" parent="Text.Body">
+        <item name="android:textColor">@color/color_fff</item>
+    </style>
+
+    <style name="Text.Body3" parent="Text.Body">
+        <item name="android:textColor">@color/color_5f5f5f</item>
+    </style>
+
+    <style name="Text.Body4" parent="Text.Body">
+        <item name="android:textColor">@color/color_ff365b</item>
+    </style>
+
+
+    <style name="Text.Caption">
+        <item name="android:textSize">@dimen/font_12</item>
+    </style>
+
+    <style name="Text.Caption1">
+        <item name="android:textColor">@color/color_5f5f5f</item>
+        <item name="android:textSize">@dimen/font_12</item>
+    </style>
+
+    <style name="Text.Caption2">
+        <item name="android:textColor">@color/color_fff</item>
+        <item name="android:textSize">@dimen/font_12</item>
+    </style>
+
+
+    <style name="Text.H2">
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textColor">@color/color_bebebe</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.H3">
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textColor">@color/color_bebebe</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+
+    <style name="Button">
+        <item name="android:fontFamily">@font/memoir</item>
+        <item name="fontFamily">@font/memoir</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:background">@drawable/selector_button_background</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Action">
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Text.Action1" parent="Text.Action">
+        <item name="android:textColor">@color/color_ff365b</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Text.Action2" parent="Text.Action">
+        <item name="android:textColor">@color/color_bebebe</item>
+    </style>
+
+    <style name="Text.Popup" />
+
+    <style name="Text.Popup.Title">
+        <item name="android:textColor">@color/color_152846</item>
+        <item name="android:textSize">@dimen/font_20</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Text.Section">
+        <item name="android:textSize">@dimen/font_20</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Section1" parent="Text.Section">
+        <item name="android:textColor">@color/color_152846</item>
+    </style>
+
+    <style name="Text.Word">
+        <item name="android:textColor">@color/color_152846</item>
+        <item name="android:textSize">@dimen/font_24</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Text.WordSection">
+        <item name="android:textColor">@color/color_264984</item>
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>

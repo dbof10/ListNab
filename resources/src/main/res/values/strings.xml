@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">Weather</string>
+
+    <string name="label_loading_1">Loading</string>
+    <string name="label_loading_2">Loading.</string>
+    <string name="label_loading_3">Loading..</string>
+    <string name="label_loading_4">Loading...</string>
+    <string name="label_retry">Retry</string>
+
+    <string name="view_empty_body">Yay! It\'s time to relax and chill</string>
+    <string name="view_error_body">An error has occurred</string>
+
+</resources>

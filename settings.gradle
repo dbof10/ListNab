@@ -1,0 +1,7 @@
+
+
+include ':common'
+include ':resources'
+include ':core-component'
+include ':home'
+include ':app'
