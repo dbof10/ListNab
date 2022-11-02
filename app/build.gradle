@@ -60,7 +60,6 @@ kapt {
 
 dependencies {
 
-    implementation "androidx.multidex:multidex:2.0.1"
     implementation project(ModuleNames.CoreComponent)
     implementation project(ModuleNames.Common)
 
@@ -110,5 +109,6 @@ dependencies {
     androidTestImplementation Dep.Test.kakao
     androidTestImplementation Dep.Test.extJunitKtx
     androidTestUtil 'androidx.test:orchestrator:1.4.1'
+    androidTestImplementation 'io.github.kakaocup:kakao:3.1.0'
 
 }

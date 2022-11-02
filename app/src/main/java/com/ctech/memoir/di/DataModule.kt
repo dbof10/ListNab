@@ -2,29 +2,21 @@ package com.ctech.memoir.di
 
 
 import com.google.gson.Gson
-import com.memoir.home.repo.HomeRepository
-import com.memoir.home.repo.WeatherApiClient
+import com.memoir.home.repo.PropertyApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import timber.log.Timber
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object DataModule {
-
-
-    @Provides
-    @Singleton
-    fun provideHomeRepo(api: WeatherApiClient): HomeRepository {
-        return HomeRepository(api, LinkedHashMap())
-    }
 
 
     @Singleton
@@ -58,7 +50,7 @@ object DataModule {
     ): Retrofit {
 
         return Retrofit.Builder()
-            .baseUrl("https://api.openweathermap.org/data/2.5/")
+            .baseUrl("https://private-9f1bb1-homegate3.apiary-mock.com/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
@@ -68,9 +60,9 @@ object DataModule {
     @Provides
     fun provideApiClient(
         retrofit: Retrofit
-    ): WeatherApiClient {
+    ): PropertyApiClient {
 
-        return retrofit.create(WeatherApiClient::class.java)
+        return retrofit.create(PropertyApiClient::class.java)
     }
 
 }

@@ -43,6 +43,10 @@ dependencies {
     kapt Dep.Dagger.compiler
     kapt Dep.Dagger.viewmodelCompiler
 
+    implementation Dep.AndroidX.Room.runtime
+    implementation Dep.AndroidX.Room.ktx
+    kapt Dep.AndroidX.Room.compiler
+
     testImplementation Dep.Test.junit
     testImplementation Dep.Test.mockk
     testImplementation Dep.Kotlin.coroutinesTest

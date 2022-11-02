@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Weather</string>
+    <string name="app_name" translatable="false">PropertyGuru</string>
 
     <string name="label_loading_1">Loading</string>
     <string name="label_loading_2">Loading.</string>

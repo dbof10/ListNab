@@ -1,27 +1,11 @@
 package com.memoir.base
 
-import androidx.multidex.MultiDexApplication
+import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 
 @HiltAndroidApp
-class MemoirApplication : MultiDexApplication() {
+class MemoirApplication : Application() {
 
-//    override val coroutineContext: CoroutineContext
-//        get() = Dispatchers.IO
-
-
-    override fun onCreate() {
-        super.onCreate()
-
-
-//        launch {
-//            if (BuildConfig.DEBUG) {
-//                Timber.plant(Timber.DebugTree())
-//            }
-//
-//        }
-
-    }
 
 }
