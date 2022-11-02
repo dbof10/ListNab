@@ -2,7 +2,7 @@ package dependencies
 
 object Versions {
     const val androidCompileSdkVersion = 32
-    const val androidMinSdkVersion = 26
+    const val androidMinSdkVersion = 23
     const val androidTargetSdkVersion = 32
 
     private const val versionMajor = 0
